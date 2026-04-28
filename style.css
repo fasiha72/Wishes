@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playwrite NO", cursive;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #5c0b21, #7b1734, #a13a5c);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px 25px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.3),
+    inset 0 0 15px rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  color: white;
+  animation: float 4s ease-in-out infinite;
+}
+
+.card h1 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  line-height: 1.4;
+  color: #ffe8e3;
+}
+
+.message {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #fff4f1;
+}
+
+button {
+  margin-top: 22px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d9a6a0, #f3d6cf);
+  color: #6a0d25;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(243,214,207,0.25);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f3d6cf, #ffe8e3);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.popup-content {
+  width: 100%;
+  max-width: 380px;
+  background: linear-gradient(145deg, #6a0d25, #8b1e3f, #b03a5b);
+  color: white;
+  padding: 28px 22px;
+  border-radius: 20px;
+  text-align: center;
+  animation: pop 0.4s ease;
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.35),
+    inset 0 0 10px rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.popup-content h2 {
+  margin-bottom: 15px;
+  color: #ffe8e3;
+  font-size: 1.4rem;
+}
+
+#love-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #fff5f2;
+}
+
+.popup-content button {
+  margin-top: 18px;
+  background: #f3d6cf;
+  color: #6a0d25;
+}
+
+.popup-content button:hover {
+  background: #ffe8e3;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 28px 18px;
+  }
+
+  .card h1 {
+    font-size: 1.6rem;
+  }
+
+  .message {
+    font-size: 0.92rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .popup-content h2 {
+    font-size: 1.2rem;
+  }
+
+  #love-text {
+    font-size: 0.9rem;
+  }
+}
